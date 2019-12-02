@@ -26,7 +26,7 @@
 
 - Forms
 - Component live cycles
-- Routing
+- Routing - detect URL changes and respond dynamically
 
 # Goals
 
