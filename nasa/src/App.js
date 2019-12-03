@@ -43,18 +43,30 @@ class App extends React.Component {
     // ];
 
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-    let colorGenerator = (elems) =>
+    let colorGenerator = elems =>
       Array(elems)
         .fill()
         .map(x => `rgba(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)}, 1)`);
-    this.colors = [colorGenerator(24), colorGenerator(12), colorGenerator(12), colorGenerator(12)];
+
+    this.state = {
+      colors: [colorGenerator(24), colorGenerator(12), colorGenerator(12), colorGenerator(12)],
+      name: "Quique",
+      age: 29
+    };
+
+    setInterval(() => {
+      this.setState({
+        colors: [colorGenerator(24), colorGenerator(12), colorGenerator(12), colorGenerator(12)]
+      });
+    }, 10000);
   }
 
   render() {
     return (
       <section className="App">
-        {this.colors.map(colorsArr => {
-          return <Swatches colors={colorsArr}></Swatches>;
+        <h1>My favourite student is {this.state.name} and his age is {this.state.age}</h1>
+        {this.state.colors.map((colorsArr, idx) => {
+          return <Swatches key={idx} colors={colorsArr}></Swatches>;
         })}
         {/* <ul>
           {this.colors}
