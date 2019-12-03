@@ -1,0 +1,26 @@
+.swatches {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    outline: 1px solid black;
+    flex-grow: 0;
+    width: 240px;
+    flex-wrap: wrap;
+    font-size: 9px;
+    background: #494949;
+    color: #c1c1c1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    color: #000;
+    font-size: 7px;
+}
+
+li {
+    outline: 1px solid black;
+}
